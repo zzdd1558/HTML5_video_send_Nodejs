@@ -1,0 +1,27 @@
+extends layout
+
+
+
+block content
+    script(src="/javascripts/httpRequest.js")
+    script(src="/javascripts/camera_permission.js")
+
+    form#data-form(action="/upload" enctype="multipart/form-data" method="post")
+        | 사번:
+        input#employee-number(type="text" name="employee-number")
+        br
+        br
+        | 이름:
+        input#user-name(type="text" name="user-name")
+
+
+    div
+        video#video(width="640" height="480" autoplay=)
+    button(id="capture") 전송
+
+    canvas#image-canvas(style="display:none;" width="640" height="480")
+
+    div#img-div
+
+
+
