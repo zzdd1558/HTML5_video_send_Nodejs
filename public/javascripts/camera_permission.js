@@ -26,29 +26,27 @@ window.onload = () => {
         let user_name_data = user_name.value;
         let image = snapShot();
 
-        let img_div = document.getElementById("img-div");
-
-        // 이미지 5개 쌓일때마다 <br> 내림 처리.
-        if( 4 < cnt ){
-            var br = document.createElement("br");
-            img_div.appendChild(br);
-
-            cnt = 0;
-        }
-
-        cnt++;
 
         // 찍은 이미지 추가 .
-        let img_tag = document.createElement("img");
-        img_tag.src = image;
-        img_tag.width = 200;
-        img_tag.height = 150;
-        img_div.appendChild(img_tag);
+        let img_div = document.getElementById("img-div").children;
+
+
+        for( var i = 0 ; i < img_div.length; i++){
+            if(!img_div[i].className.includes("add-img")){
+                img_div[i].classList.add("add-img");
+                var imgChild = img_div[i].children[0];
+
+                imgChild.src = image;
+                break;
+            }
+        }
 
         let formData = new FormData();
         formData.append("employee" , employee_data)
         formData.append("user_name" , user_name_data)
         formData.append("image_base64" , image)
+
+
 
         sendRequest("http://127.0.0.1:3000/upload", formData, send_capture_response, "POST")
     });

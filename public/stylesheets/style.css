@@ -1,8 +1,112 @@
 body {
   padding: 50px;
+  background-color: #F5F5F5;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+input:focus , button{
+    outline:none;
+}
+
+input[type="text"] {
+    width : 230px;
+    height: 38px;
+    border-radius: 24px;
+    border : 1px solid gray;
+
+    text-align: center;
+    font-size: 15px;
+}
+
+input[type="text"]:focus{
+    border : 1.5px solid pink;
+}
+
+.title{
+    font-size: 40px;
+}
+
+#capture{
+    width: 200px;
+    height: 55px;
+
+    background-image: url("/images/btn_capture.png");
+    border-radius: 25px;
+}
+
+.center{
+    text-align:center;
+}
+
+.top-bottom-margin{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.left-right-margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.data-div {
+    overflow: hidden;
+
+}
+
+.data-div span{
+    display: inline-block;
+    float: left;
+}
+
+.table-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.margin-auto{
+    margin : 0 auto;
+}
+
+.effect{
+    width: 740px;
+    height: 490px;
+    background-color: #fff;
+    padding-top: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    margin : 30px auto;
+}
+
+.capture-img {
+    border: 5px solid #ffffff;
+    padding : 2px;
+}
+
+#img-div{
+    margin : 30px auto;
+}
+
+.capture-effect{
+    display: inline-block;
+    float: left;
+    width: 220px;
+    height: 154px;
+    background-color: #d9d9d9;
+    padding-top: 8px;
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+span.add-img > img {
+    width: 210px;
+    margin-left: 9px;
+    margin-top : 2px;
+    height: auto;
+    border-radius: 4px;
 }

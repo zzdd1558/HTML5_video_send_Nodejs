@@ -6,22 +6,82 @@ block content
     script(src="/javascripts/httpRequest.js")
     script(src="/javascripts/camera_permission.js")
 
-    form#data-form(action="/upload" enctype="multipart/form-data" method="post")
-        | 사번:
-        input#employee-number(type="text" name="employee-number")
-        br
-        br
-        | 이름:
-        input#user-name(type="text" name="user-name")
+    div#contents.center
+        img.top-bottom-margin(src="/images/image_add_top_title.png")
+        div(style="width:660px; margin : 0 auto;")
+            form#data-form(action="/upload" enctype="multipart/form-data" method="post")
+                div.data-div.margin-auto
+                    span
+                        img.left-right-margin(src="/images/image_add_input_title01.png" style="margin-top : 6px")
+                    span.table-cell
+                        input#employee-number.left-right-margin(type="text" name="employee-number")
+                    span
+                        img.left-right-margin(src="/images/image_add_input_title02.png" style="margin-top : 6px")
+                    span.table-cell
+                        input#user-name.left-right-margin(type="text" name="user-name")
 
 
-    div
-        video#video(width="640" height="480" autoplay=)
-    button(id="capture") 전송
+        div#video-div.top-bottom-margin.effect
+            video#video(width="720" height="480" autoplay=)
+        button#capture.center.top-bottom-margin
 
-    canvas#image-canvas(style="display:none;" width="640" height="480")
+        p 얼굴이 잘보이도록 사진을 20장 찍어주시기 바랍니다.
 
-    div#img-div
+        canvas#image-canvas(style="display:none;" width="640" height="480")
+
+        div#img-div(style="width:1200px")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+            span.capture-effect
+                img(src="/images/blank_img.png")
+
 
 
 
