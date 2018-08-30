@@ -48,7 +48,7 @@ window.onload = () => {
 
 
 
-        sendRequest("http://127.0.0.1:3000/upload", formData, send_capture_response, "POST")
+        sendRequest("https://192.168.43.211/upload", formData, send_capture_response, "POST")
     });
 
 

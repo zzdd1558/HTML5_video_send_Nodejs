@@ -19,7 +19,7 @@ app.set('port', port);
 
 var options = {
     key: fs.readFileSync('ssl_key.pem'),
-    cert: fs.readFileSync('cert.pem')
+    cert: fs.readFileSync('public_cert.pem')
 };
 
 
