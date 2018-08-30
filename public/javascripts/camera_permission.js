@@ -24,31 +24,44 @@ window.onload = () => {
     send_capture.addEventListener("click", () => {
         let employee_data = employee_number.value
         let user_name_data = user_name.value;
-        let image = snapShot();
+
+        let employee_check = InputValidator.isValidEmployeeNumber(employee_data.trim());
+        let name_check = InputValidator.isValidName(user_name_data.trim());
+
+        if(!employee_check){
+            alert("7자리의 사번으로 구성되어야 합니다.");
+            employee_number.value = "";
+            employee_number.focus();
+        }else if ( !name_check) {
+            alert(" 2~4글자의 한글이름만 사용가능합니다.( 자음 , 모음 사용 불가능. )")
+            user_name.value = "";
+            user_name.focus();
+        }else{
+            let image = snapShot();
 
 
-        // 찍은 이미지 추가 .
-        let img_div = document.getElementById("img-div").children;
+            // 찍은 이미지 추가 .
+            let img_div = document.getElementById("img-div").children;
 
 
-        for( var i = 0 ; i < img_div.length; i++){
-            if(!img_div[i].className.includes("add-img")){
-                img_div[i].classList.add("add-img");
-                var imgChild = img_div[i].children[0];
+            for( var i = 0 ; i < img_div.length; i++){
+                if(!img_div[i].className.includes("add-img")){
+                    img_div[i].classList.add("add-img");
+                    var imgChild = img_div[i].children[0];
 
-                imgChild.src = image;
-                break;
+                    imgChild.src = image;
+                    break;
+                }
             }
+
+            let formData = new FormData();
+            formData.append("employee" , employee_data)
+            formData.append("user_name" , user_name_data)
+            formData.append("image_base64" , image)
+
+            //sendRequest("https://localhost/upload", formData, send_capture_response, "POST")
+            sendRequest("https://faceshot.daekyocns.co.kr/upload", formData, send_capture_response, "POST")
         }
-
-        let formData = new FormData();
-        formData.append("employee" , employee_data)
-        formData.append("user_name" , user_name_data)
-        formData.append("image_base64" , image)
-
-
-
-        sendRequest("https://192.168.43.211/upload", formData, send_capture_response, "POST")
     });
 
 
