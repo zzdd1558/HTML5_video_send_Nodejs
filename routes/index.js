@@ -35,9 +35,9 @@ router.post('/upload', upload.none(), (req, res, err) => {
     let user_name = req.body["user_name"];
     let image_base64 = req.body["image_base64"];
 
-    console.log(employee)
-    console.log(user_name)
-    console.log(image_base64)
+    // console.log(employee)
+    // console.log(user_name)
+    // console.log(image_base64)
 
     // 중복되지 않은 랜덤 String 이미지값을 위한 crypto 처리.
     let seed = crypto.randomBytes(20);
