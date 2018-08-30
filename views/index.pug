@@ -3,6 +3,7 @@ extends layout
 
 
 block content
+    script(src="/javascripts/InputValidator.js")
     script(src="/javascripts/httpRequest.js")
     script(src="/javascripts/camera_permission.js")
 
@@ -14,7 +15,7 @@ block content
                     span
                         img.left-right-margin(src="/images/image_add_input_title01.png" style="margin-top : 6px")
                     span.table-cell
-                        input#employee-number.left-right-margin(type="text" name="employee-number")
+                        input#employee-number.left-right-margin(type="text" name="employee-number" maxlength=7)
                     span
                         img.left-right-margin(src="/images/image_add_input_title02.png" style="margin-top : 6px")
                     span.table-cell
